@@ -2,7 +2,6 @@
 #include "Parser.h"
 
 #include <iostream>
-#include <sstream>
 #include <fstream>
 
 int main(int argc, char** argv) {
