@@ -5,7 +5,10 @@
 #include "Interpreter.h"
 
 
-Interpreter::Interpreter(DatalogProgram dataprog, Database database) {
-    program = dataprog;
-    db = database;
+Interpreter::Interpreter(DatalogProgram dataprog) {
+    /* TODO: createRelations
+     * TODO: createTuples
+     * TODO: addRelation
+     * TODO: evalQueries
+     */
 }

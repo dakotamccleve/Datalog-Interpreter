@@ -37,5 +37,8 @@ public:
     Parameter* parameter(std::vector<Token*> tokens);
     std::vector <Parameter*> parameterList(std::vector<Token*> tokens);
     void peekToken(std::vector<Token*> tokens, std::string checkStr);
+    DatalogProgram getDatalogProgram() {
+        return datalog;
+    }
 
 };

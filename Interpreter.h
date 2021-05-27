@@ -11,11 +11,15 @@
 
 class Interpreter {
 public:
-    Interpreter(DatalogProgram dataprog, Database database);
+    Interpreter(DatalogProgram dataprog);
+    void createRelations(std::vector<Predicate*> schemes);
+    void createTuples(std::vector<Predicate*> facts);
 
 private:
     Database db;
     DatalogProgram program;
+    std::vector<Tuple> tuples;
+    std::vector<Relation> relations;
 
 };
 

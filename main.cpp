@@ -1,5 +1,6 @@
 #include "Lexer.h"
 #include "Parser.h"
+#include "Interpreter.h"
 
 #include <iostream>
 #include <fstream>
@@ -17,6 +18,7 @@ int main(int argc, char** argv) {
 
     lexer->Run(inputString);
     parser->Parse(lexer->getTokens());
+    Interpreter interpreter(parser->getDatalogProgram());
  //   lexer->printTokens();
 
 

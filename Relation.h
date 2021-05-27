@@ -12,17 +12,24 @@
 
 class Relation {
 public:
-    Relation(std::string tableName, Header newHead) {header = newHead; name = tableName;}
+    Relation(std::string tableName, std::vector<std::string> newHeaders);
     std::string toString();
-    std::string getName() {return name;}
+    void addTuple(const Tuple& tuple);
+    void select(int index, std::string value);
+    void select(int index, int index2);
+    void project();
+
+
+    /*  std::string getName() {return name;}
     std::set<Tuple> getTuples() {return tupleSet;}
     Header getHeader() {return header;}
-    
+    */
+
 
 private:
     std::string name;
     std::set<Tuple> tupleSet;
-    Header header;
+    std::vector<std::string> headers;
 
 
 };

@@ -17,8 +17,11 @@ void Parser::Parse(std::vector<Token *> tokens) {
         std::cout << "Failure!\n  " << err->toString() << std::endl;
         return;
     }
+    //This is for Lab 2
+    /*
     std::cout <<"Success!" << std::endl;
     std::cout << datalog.toString();
+    */
 }
 
 void Parser::datalogProgram(std::vector<Token *> tokens) {

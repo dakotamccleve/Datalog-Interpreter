@@ -20,3 +20,38 @@ std::vector<std::string> Tuple::getValues() {
 bool Tuple::operator< (const Tuple t) const {
     return tupleValues < t.tupleValues;
 }
+
+void Tuple::setRelationName(std::string name) {
+    relationName = name;
+}
+
+void Tuple::setTupleValues(std::vector<std::string> tuples) {
+    tupleValues = tuples;
+}
+
+std::string Tuple::getRelationName() {
+    return relationName;
+}
+
+void Tuple::printTuples() {
+    int j = 0;
+    for (unsigned int i = 0; i < tupleValues.size(); i++) {
+        if ((j%2 == 0)) {
+            std::cout << "\n";
+        }
+        std::string output = tupleValues[i];
+        std::cout << output;
+        j++;
+    }
+    std::cout << "\n" << std::endl;
+}
+
+std::string Tuple::toString() {
+    std::string str;
+    str += "( ";
+    for(std::string v : tupleValues) {
+        str += v + ", ";
+    }
+    str += " )";
+    return str;
+}
