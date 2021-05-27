@@ -6,14 +6,96 @@
 
 
 Interpreter::Interpreter(DatalogProgram dataprog) {
-    /* TODO: createRelations
-     * TODO: createTuples
-     * TODO: addRelation
-     * TODO: evalQueries
-     */
+    createRelations(dataprog.getSchemes());
+    createTuples(dataprog.getFacts());
+    for(Relation r : relations) {
+        db.addRelation(r.getName(), r);
+    }
+    evalQueries(dataprog.getQueries());
 }
 
-void createRelations(std::vector<Predicate*> schemes);
-void createTuples(std::vector<Predicate*> facts);
-Relation matchRelationFromQuery(Predicate* query);
-void evalQueries(std::vector<Predicate*> queries);
+void Interpreter::createRelations(std::vector<Predicate*> schemes) {
+    for(Predicate* s : schemes) {
+        relations.push_back(Relation(s->getName(), s->getParamAsStr()));
+    }
+}
+
+void Interpreter::createTuples(std::vector<Predicate*> facts) {
+    for (Predicate* f : facts) {
+        tuples.push_back(Tuple(f->getName(), f->getParamAsStr()));
+    }
+    int i = 0;
+    for (Tuple t: tuples) {
+        while ((t.getRelationName() != relations[i].getName() || i == relations.size())) {
+            i++;
+        }
+        if (t.getRelationName() == relations[i].getName()) {
+            t.setRelationName(relations[i].getName());
+            relations[i].addTuple(t);
+        }
+    }
+}
+
+Relation Interpreter::matchRelationFromQuery(Predicate* query) {
+    int i = 0;
+    while((query->getName() != relations[i].getName()) || i == relations.size()) {
+        i++;
+    }
+    if(query->getName() == relations[i].getName()) {
+        return relations[i];
+    }
+    else return {};
+}
+
+void Interpreter::evalQueries(std::vector<Predicate*> queries) {
+    for(Predicate* q : queries) {
+        std::vector<int> indices;
+        Relation matchRel;
+        std::vector<std::string> queryVars;
+        matchRel = matchRelationFromQuery(q);
+        std::vector<Parameter *> qParams = q->getParameters();
+        int dupPos = 0;
+        for (unsigned int i = 0; i < qParams.size(); i++) {
+            std::string tType = qParams[i]->getTokens().getTokenType();
+            std::string tData = qParams[i]->getTokens().getData();
+            bool isDuplicateVar = false;
+            if (tType == "STRING") {
+                matchRel = matchRel.select(i, tData);
+            }
+            else if (tType == "ID") {
+                for (unsigned int j = 0; j < queryVars.size(); j++) {
+                    if (queryVars[j] == tData) {
+                        isDuplicateVar = true;
+                        dupPos = j;
+                    }
+                }
+            }
+            if(isDuplicateVar) {
+                matchRel = matchRel.select(dupPos, i);
+            }
+            else {
+                queryVars.push_back(tData);
+                indices.push_back(i);
+            }
+        }
+        matchRel = matchRel.project(indices);
+        matchRel = matchRel.rename(queryVars);
+
+        std::stringstream ss;
+        for(unsigned int i = 0; i < qParams.size(); i++) {
+            ss << qParams[i]->toString();
+            if(!(i == (qParams.size()-1))) {
+                ss << ",";
+            }
+        }
+        int num = matchRel.numOfTuples(queryVars);
+        std::cout << matchRel.getName() << "(" << ss.str() << ")?";
+        if(matchRel.getTuples().size() > 0) {
+            std::cout << " Yes(" << num << ")" << std::endl;
+        }
+        else {
+            std::cout << " No" << std::endl;
+        }
+        matchRel.presentTuples(indices, queryVars, num);
+    }
+}

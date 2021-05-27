@@ -7,3 +7,7 @@
 std::string Parameter::toString() {
     return this->token->getData();
 }
+
+Token Parameter::getTokens() {
+    return *token;
+}

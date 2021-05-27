@@ -8,6 +8,7 @@
 #include "Tuple.h"
 #include <set>
 #include <string>
+#include <sstream>
 
 class Relation {
 public:
@@ -22,7 +23,7 @@ public:
     Relation project(std::vector<int> indices);
     Relation rename(std::vector<std::string> IDs);
     int numOfTuples(std::vector<std::string> vars);
-    std::string tuplesResults(const std::vector<int>& indices, std::vector<std::string> vars, int num);
+    void presentTuples(std::vector<int> positions, std::vector<std::string> IDs, int number);
 
 
 private:

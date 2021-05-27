@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     lexer->Run(inputString);
     parser->Parse(lexer->getTokens());
     Interpreter interpreter(parser->getDatalogProgram());
- //   lexer->printTokens();
+    //   lexer->printTokens();
 
 
     delete parser;

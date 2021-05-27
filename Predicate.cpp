@@ -24,3 +24,7 @@ std::vector<std::string> Predicate::getParamAsStr() {
     }
     return paramAsStr;
 }
+
+std::vector<Parameter *> Predicate::getParameters() {
+    return parameters;
+}

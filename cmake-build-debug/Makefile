@@ -276,33 +276,6 @@ DatalogProgram.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/DatalogProgram.cpp.s
 .PHONY : DatalogProgram.cpp.s
 
-Header.obj: Header.cpp.obj
-
-.PHONY : Header.obj
-
-# target to build an object file
-Header.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Header.cpp.obj
-.PHONY : Header.cpp.obj
-
-Header.i: Header.cpp.i
-
-.PHONY : Header.i
-
-# target to preprocess a source file
-Header.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Header.cpp.i
-.PHONY : Header.cpp.i
-
-Header.s: Header.cpp.s
-
-.PHONY : Header.s
-
-# target to generate assembly for a file
-Header.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Header.cpp.s
-.PHONY : Header.cpp.s
-
 IDAutomaton.obj: IDAutomaton.cpp.obj
 
 .PHONY : IDAutomaton.obj
@@ -678,9 +651,6 @@ help:
 	@echo ... DatalogProgram.obj
 	@echo ... DatalogProgram.i
 	@echo ... DatalogProgram.s
-	@echo ... Header.obj
-	@echo ... Header.i
-	@echo ... Header.s
 	@echo ... IDAutomaton.obj
 	@echo ... IDAutomaton.i
 	@echo ... IDAutomaton.s

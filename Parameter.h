@@ -13,6 +13,7 @@ public:
         this->token = token;
     }
     std::string toString();
+    Token getTokens();
 
 private:
     Token* token;

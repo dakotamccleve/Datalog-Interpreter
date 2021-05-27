@@ -21,6 +21,7 @@ public:
         return name;
     }
     std::vector<std::string> getParamAsStr();
+    std::vector<Parameter *> getParameters();
 private:
     std::string name;
     std::vector<Parameter*> parameters;

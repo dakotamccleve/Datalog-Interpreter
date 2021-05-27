@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/dakot/Documents/cs236/cs236-project-3/CommentAutomaton.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/CommentAutomaton.cpp.obj"
   "C:/Users/dakot/Documents/cs236/cs236-project-3/Database.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/Database.cpp.obj"
   "C:/Users/dakot/Documents/cs236/cs236-project-3/DatalogProgram.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/DatalogProgram.cpp.obj"
-  "C:/Users/dakot/Documents/cs236/cs236-project-3/Header.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/Header.cpp.obj"
   "C:/Users/dakot/Documents/cs236/cs236-project-3/IDAutomaton.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/IDAutomaton.cpp.obj"
   "C:/Users/dakot/Documents/cs236/cs236-project-3/Interpreter.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/Interpreter.cpp.obj"
   "C:/Users/dakot/Documents/cs236/cs236-project-3/Lexer.cpp" "C:/Users/dakot/Documents/cs236/cs236-project-3/cmake-build-debug/CMakeFiles/project_3_main.dir/Lexer.cpp.obj"

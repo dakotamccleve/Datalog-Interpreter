@@ -19,7 +19,6 @@ CMakeFiles/project_3_main.dir/CommentAutomaton.cpp.obj
 CMakeFiles/project_3_main.dir/Database.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Database.cpp
  C:/Users/dakot/Documents/cs236/cs236-project-3/Database.h
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Relation.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Tuple.h
 CMakeFiles/project_3_main.dir/DatalogProgram.cpp.obj
@@ -29,9 +28,6 @@ CMakeFiles/project_3_main.dir/DatalogProgram.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Predicate.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Rule.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Token.h
-CMakeFiles/project_3_main.dir/Header.cpp.obj
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.cpp
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.h
 CMakeFiles/project_3_main.dir/IDAutomaton.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Automaton.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/IDAutomaton.cpp
@@ -40,7 +36,6 @@ CMakeFiles/project_3_main.dir/IDAutomaton.cpp.obj
 CMakeFiles/project_3_main.dir/Interpreter.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Database.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/DatalogProgram.h
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Interpreter.cpp
  C:/Users/dakot/Documents/cs236/cs236-project-3/Interpreter.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Parameter.h
@@ -83,7 +78,6 @@ CMakeFiles/project_3_main.dir/Predicate.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Predicate.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Token.h
 CMakeFiles/project_3_main.dir/Relation.cpp.obj
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Relation.cpp
  C:/Users/dakot/Documents/cs236/cs236-project-3/Relation.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Tuple.h
@@ -108,7 +102,6 @@ CMakeFiles/project_3_main.dir/main.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-3/Automaton.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Database.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/DatalogProgram.h
- C:/Users/dakot/Documents/cs236/cs236-project-3/Header.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Interpreter.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Lexer.h
  C:/Users/dakot/Documents/cs236/cs236-project-3/Parameter.h
