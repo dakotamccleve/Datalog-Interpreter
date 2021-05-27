@@ -24,7 +24,7 @@ void Interpreter::createTuples(std::vector<Predicate*> facts) {
     for (Predicate* f : facts) {
         tuples.push_back(Tuple(f->getName(), f->getParamAsStr()));
     }
-    int i = 0;
+    unsigned int i = 0;
     for (Tuple t: tuples) {
         while ((t.getRelationName() != relations[i].getName() || i == relations.size())) {
             i++;
@@ -37,7 +37,7 @@ void Interpreter::createTuples(std::vector<Predicate*> facts) {
 }
 
 Relation Interpreter::matchRelationFromQuery(Predicate* query) {
-    int i = 0;
+    unsigned int i = 0;
     while((query->getName() != relations[i].getName()) || i == relations.size()) {
         i++;
     }
