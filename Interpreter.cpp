@@ -26,6 +26,7 @@ void Interpreter::createTuples(std::vector<Predicate*> facts) {
     }
     unsigned int i = 0;
     for (Tuple t: tuples) {
+        i = 0;
         while ((t.getRelationName() != relations[i].getName() || i == relations.size())) {
             i++;
         }
