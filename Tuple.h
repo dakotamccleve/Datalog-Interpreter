@@ -15,7 +15,7 @@ public:
     Tuple(std::string name, std::vector<std::string> values);
     void addValue(std::string value);
     std::vector<std::string> getValues();
-    bool operator< (const Tuple & other) const;
+    bool operator< (const Tuple t) const;
 
 private:
     std::vector<std::string> tupleValues;

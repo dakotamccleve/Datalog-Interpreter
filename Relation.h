@@ -16,6 +16,7 @@ public:
     std::string toString();
     std::string getName() {return name;}
     std::set<Tuple> getTuples() {return tupleSet;}
+    Header getHeader() {return header;}
     
 
 private:

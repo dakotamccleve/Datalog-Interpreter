@@ -3,3 +3,9 @@
 //
 
 #include "Interpreter.h"
+
+
+Interpreter::Interpreter(DatalogProgram dataprog, Database database) {
+    program = dataprog;
+    db = database;
+}

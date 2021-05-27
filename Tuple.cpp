@@ -17,6 +17,6 @@ std::vector<std::string> Tuple::getValues() {
     return tupleValues;
 }
 
-bool Tuple::operator< (const Tuple & other) const {
-    //TODO: BUILD LESS THAN OPERATOR
+bool Tuple::operator< (const Tuple t) const {
+    return tupleValues < t.tupleValues;
 }

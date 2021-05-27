@@ -10,6 +10,12 @@
 
 
 class Interpreter {
+public:
+    Interpreter(DatalogProgram dataprog, Database database);
+
+private:
+    Database db;
+    DatalogProgram program;
 
 };
 

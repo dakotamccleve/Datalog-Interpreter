@@ -3,3 +3,8 @@
 //
 
 #include "Relation.h"
+
+
+void Relation::insert(std::string str, Relation rel) {
+
+}
