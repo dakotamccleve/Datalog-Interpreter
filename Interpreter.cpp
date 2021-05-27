@@ -12,3 +12,8 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
      * TODO: evalQueries
      */
 }
+
+void createRelations(std::vector<Predicate*> schemes);
+void createTuples(std::vector<Predicate*> facts);
+Relation matchRelationFromQuery(Predicate* query);
+void evalQueries(std::vector<Predicate*> queries);

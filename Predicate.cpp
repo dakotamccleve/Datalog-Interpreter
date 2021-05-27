@@ -16,3 +16,11 @@ std::string Predicate::toString() {
     ss << ")";
     return ss.str();
 }
+
+std::vector<std::string> Predicate::getParamAsStr() {
+    std::vector<std::string> paramAsStr;
+    for(Parameter* p : parameters) {
+        paramAsStr.push_back(p->toString());
+    }
+    return paramAsStr;
+}

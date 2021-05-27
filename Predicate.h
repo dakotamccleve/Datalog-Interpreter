@@ -17,6 +17,10 @@ public:
         parameters.push_back(param);
     }
     std::string toString();
+    std::string getName() {
+        return name;
+    }
+    std::vector<std::string> getParamAsStr();
 private:
     std::string name;
     std::vector<Parameter*> parameters;
