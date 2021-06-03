@@ -24,12 +24,17 @@ public:
     Relation rename(std::vector<std::string> IDs);
     int numOfTuples(std::vector<std::string> vars);
     void presentTuples(std::vector<int> positions, std::vector<std::string> IDs, int number);
+    Relation join(Relation rel1);
+    Tuple combineHeaders();
+    Tuple combineTuples(Tuple tup1, Tuple tup2);
+    bool isJoinable(Tuple tup1, Tuple t2);
+
 
 
 private:
     std::string name;
     std::set<Tuple> tupleSet = {};
-    std::vector<std::string> headers ;
+    std::vector<std::string> headers;
 
 
 };

@@ -11,6 +11,7 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
     for(Relation r : relations) {
         db.addRelation(r.getName(), r);
     }
+    //TODO: evalRules;
     evalQueries(dataprog.getQueries());
 }
 
@@ -85,7 +86,7 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
         std::stringstream ss;
         for(unsigned int i = 0; i < qParams.size(); i++) {
             ss << qParams[i]->toString();
-            if(!(i == (qParams.size()-1))) {
+            if(i != (qParams.size() - 1)) {
                 ss << ",";
             }
         }

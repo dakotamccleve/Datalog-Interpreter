@@ -19,7 +19,6 @@ public:
 
 private:
     Database db;
-    DatalogProgram program;
     std::vector<Tuple> tuples;
     std::vector<Relation> relations;
 

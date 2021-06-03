@@ -66,10 +66,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\dakot\Documents\cs236\cs236-project-3
+CMAKE_SOURCE_DIR = C:\Users\dakot\Documents\cs236\cs236-project-4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\dakot\Documents\cs236\cs236-project-3\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\dakot\Documents\cs236\cs236-project-4\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -98,9 +98,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dakot\Documents\cs236\cs236-project-3\cmake-build-debug\CMakeFiles C:\Users\dakot\Documents\cs236\cs236-project-3\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dakot\Documents\cs236\cs236-project-4\cmake-build-debug\CMakeFiles C:\Users\dakot\Documents\cs236\cs236-project-4\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dakot\Documents\cs236\cs236-project-3\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dakot\Documents\cs236\cs236-project-4\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,17 +129,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named project_3_main
+# Target rules for targets named project_4_main
 
 # Build rule for target.
-project_3_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 project_3_main
-.PHONY : project_3_main
+project_4_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 project_4_main
+.PHONY : project_4_main
 
 # fast build rule for target.
-project_3_main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/build
-.PHONY : project_3_main/fast
+project_4_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/build
+.PHONY : project_4_main/fast
 
 ColonAutomaton.obj: ColonAutomaton.cpp.obj
 
@@ -147,7 +147,7 @@ ColonAutomaton.obj: ColonAutomaton.cpp.obj
 
 # target to build an object file
 ColonAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonAutomaton.cpp.obj
 .PHONY : ColonAutomaton.cpp.obj
 
 ColonAutomaton.i: ColonAutomaton.cpp.i
@@ -156,7 +156,7 @@ ColonAutomaton.i: ColonAutomaton.cpp.i
 
 # target to preprocess a source file
 ColonAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonAutomaton.cpp.i
 .PHONY : ColonAutomaton.cpp.i
 
 ColonAutomaton.s: ColonAutomaton.cpp.s
@@ -165,7 +165,7 @@ ColonAutomaton.s: ColonAutomaton.cpp.s
 
 # target to generate assembly for a file
 ColonAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonAutomaton.cpp.s
 .PHONY : ColonAutomaton.cpp.s
 
 ColonDashAutomaton.obj: ColonDashAutomaton.cpp.obj
@@ -174,7 +174,7 @@ ColonDashAutomaton.obj: ColonDashAutomaton.cpp.obj
 
 # target to build an object file
 ColonDashAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonDashAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonDashAutomaton.cpp.obj
 .PHONY : ColonDashAutomaton.cpp.obj
 
 ColonDashAutomaton.i: ColonDashAutomaton.cpp.i
@@ -183,7 +183,7 @@ ColonDashAutomaton.i: ColonDashAutomaton.cpp.i
 
 # target to preprocess a source file
 ColonDashAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonDashAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonDashAutomaton.cpp.i
 .PHONY : ColonDashAutomaton.cpp.i
 
 ColonDashAutomaton.s: ColonDashAutomaton.cpp.s
@@ -192,7 +192,7 @@ ColonDashAutomaton.s: ColonDashAutomaton.cpp.s
 
 # target to generate assembly for a file
 ColonDashAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/ColonDashAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/ColonDashAutomaton.cpp.s
 .PHONY : ColonDashAutomaton.cpp.s
 
 CommentAutomaton.obj: CommentAutomaton.cpp.obj
@@ -201,7 +201,7 @@ CommentAutomaton.obj: CommentAutomaton.cpp.obj
 
 # target to build an object file
 CommentAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/CommentAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/CommentAutomaton.cpp.obj
 .PHONY : CommentAutomaton.cpp.obj
 
 CommentAutomaton.i: CommentAutomaton.cpp.i
@@ -210,7 +210,7 @@ CommentAutomaton.i: CommentAutomaton.cpp.i
 
 # target to preprocess a source file
 CommentAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/CommentAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/CommentAutomaton.cpp.i
 .PHONY : CommentAutomaton.cpp.i
 
 CommentAutomaton.s: CommentAutomaton.cpp.s
@@ -219,7 +219,7 @@ CommentAutomaton.s: CommentAutomaton.cpp.s
 
 # target to generate assembly for a file
 CommentAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/CommentAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/CommentAutomaton.cpp.s
 .PHONY : CommentAutomaton.cpp.s
 
 Database.obj: Database.cpp.obj
@@ -228,7 +228,7 @@ Database.obj: Database.cpp.obj
 
 # target to build an object file
 Database.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Database.cpp.obj
 .PHONY : Database.cpp.obj
 
 Database.i: Database.cpp.i
@@ -237,7 +237,7 @@ Database.i: Database.cpp.i
 
 # target to preprocess a source file
 Database.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Database.cpp.i
 .PHONY : Database.cpp.i
 
 Database.s: Database.cpp.s
@@ -246,7 +246,7 @@ Database.s: Database.cpp.s
 
 # target to generate assembly for a file
 Database.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Database.cpp.s
 .PHONY : Database.cpp.s
 
 DatalogProgram.obj: DatalogProgram.cpp.obj
@@ -255,7 +255,7 @@ DatalogProgram.obj: DatalogProgram.cpp.obj
 
 # target to build an object file
 DatalogProgram.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/DatalogProgram.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/DatalogProgram.cpp.obj
 .PHONY : DatalogProgram.cpp.obj
 
 DatalogProgram.i: DatalogProgram.cpp.i
@@ -264,7 +264,7 @@ DatalogProgram.i: DatalogProgram.cpp.i
 
 # target to preprocess a source file
 DatalogProgram.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/DatalogProgram.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/DatalogProgram.cpp.i
 .PHONY : DatalogProgram.cpp.i
 
 DatalogProgram.s: DatalogProgram.cpp.s
@@ -273,7 +273,7 @@ DatalogProgram.s: DatalogProgram.cpp.s
 
 # target to generate assembly for a file
 DatalogProgram.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/DatalogProgram.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/DatalogProgram.cpp.s
 .PHONY : DatalogProgram.cpp.s
 
 IDAutomaton.obj: IDAutomaton.cpp.obj
@@ -282,7 +282,7 @@ IDAutomaton.obj: IDAutomaton.cpp.obj
 
 # target to build an object file
 IDAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/IDAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/IDAutomaton.cpp.obj
 .PHONY : IDAutomaton.cpp.obj
 
 IDAutomaton.i: IDAutomaton.cpp.i
@@ -291,7 +291,7 @@ IDAutomaton.i: IDAutomaton.cpp.i
 
 # target to preprocess a source file
 IDAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/IDAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/IDAutomaton.cpp.i
 .PHONY : IDAutomaton.cpp.i
 
 IDAutomaton.s: IDAutomaton.cpp.s
@@ -300,7 +300,7 @@ IDAutomaton.s: IDAutomaton.cpp.s
 
 # target to generate assembly for a file
 IDAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/IDAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/IDAutomaton.cpp.s
 .PHONY : IDAutomaton.cpp.s
 
 Interpreter.obj: Interpreter.cpp.obj
@@ -309,7 +309,7 @@ Interpreter.obj: Interpreter.cpp.obj
 
 # target to build an object file
 Interpreter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Interpreter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Interpreter.cpp.obj
 .PHONY : Interpreter.cpp.obj
 
 Interpreter.i: Interpreter.cpp.i
@@ -318,7 +318,7 @@ Interpreter.i: Interpreter.cpp.i
 
 # target to preprocess a source file
 Interpreter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Interpreter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Interpreter.cpp.i
 .PHONY : Interpreter.cpp.i
 
 Interpreter.s: Interpreter.cpp.s
@@ -327,7 +327,7 @@ Interpreter.s: Interpreter.cpp.s
 
 # target to generate assembly for a file
 Interpreter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Interpreter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Interpreter.cpp.s
 .PHONY : Interpreter.cpp.s
 
 Lexer.obj: Lexer.cpp.obj
@@ -336,7 +336,7 @@ Lexer.obj: Lexer.cpp.obj
 
 # target to build an object file
 Lexer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Lexer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Lexer.cpp.obj
 .PHONY : Lexer.cpp.obj
 
 Lexer.i: Lexer.cpp.i
@@ -345,7 +345,7 @@ Lexer.i: Lexer.cpp.i
 
 # target to preprocess a source file
 Lexer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Lexer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Lexer.cpp.i
 .PHONY : Lexer.cpp.i
 
 Lexer.s: Lexer.cpp.s
@@ -354,7 +354,7 @@ Lexer.s: Lexer.cpp.s
 
 # target to generate assembly for a file
 Lexer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Lexer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Lexer.cpp.s
 .PHONY : Lexer.cpp.s
 
 MatcherAutomaton.obj: MatcherAutomaton.cpp.obj
@@ -363,7 +363,7 @@ MatcherAutomaton.obj: MatcherAutomaton.cpp.obj
 
 # target to build an object file
 MatcherAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/MatcherAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/MatcherAutomaton.cpp.obj
 .PHONY : MatcherAutomaton.cpp.obj
 
 MatcherAutomaton.i: MatcherAutomaton.cpp.i
@@ -372,7 +372,7 @@ MatcherAutomaton.i: MatcherAutomaton.cpp.i
 
 # target to preprocess a source file
 MatcherAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/MatcherAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/MatcherAutomaton.cpp.i
 .PHONY : MatcherAutomaton.cpp.i
 
 MatcherAutomaton.s: MatcherAutomaton.cpp.s
@@ -381,7 +381,7 @@ MatcherAutomaton.s: MatcherAutomaton.cpp.s
 
 # target to generate assembly for a file
 MatcherAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/MatcherAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/MatcherAutomaton.cpp.s
 .PHONY : MatcherAutomaton.cpp.s
 
 Parameter.obj: Parameter.cpp.obj
@@ -390,7 +390,7 @@ Parameter.obj: Parameter.cpp.obj
 
 # target to build an object file
 Parameter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parameter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parameter.cpp.obj
 .PHONY : Parameter.cpp.obj
 
 Parameter.i: Parameter.cpp.i
@@ -399,7 +399,7 @@ Parameter.i: Parameter.cpp.i
 
 # target to preprocess a source file
 Parameter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parameter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parameter.cpp.i
 .PHONY : Parameter.cpp.i
 
 Parameter.s: Parameter.cpp.s
@@ -408,7 +408,7 @@ Parameter.s: Parameter.cpp.s
 
 # target to generate assembly for a file
 Parameter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parameter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parameter.cpp.s
 .PHONY : Parameter.cpp.s
 
 Parser.obj: Parser.cpp.obj
@@ -417,7 +417,7 @@ Parser.obj: Parser.cpp.obj
 
 # target to build an object file
 Parser.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parser.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parser.cpp.obj
 .PHONY : Parser.cpp.obj
 
 Parser.i: Parser.cpp.i
@@ -426,7 +426,7 @@ Parser.i: Parser.cpp.i
 
 # target to preprocess a source file
 Parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parser.cpp.i
 .PHONY : Parser.cpp.i
 
 Parser.s: Parser.cpp.s
@@ -435,7 +435,7 @@ Parser.s: Parser.cpp.s
 
 # target to generate assembly for a file
 Parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Parser.cpp.s
 .PHONY : Parser.cpp.s
 
 Predicate.obj: Predicate.cpp.obj
@@ -444,7 +444,7 @@ Predicate.obj: Predicate.cpp.obj
 
 # target to build an object file
 Predicate.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Predicate.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Predicate.cpp.obj
 .PHONY : Predicate.cpp.obj
 
 Predicate.i: Predicate.cpp.i
@@ -453,7 +453,7 @@ Predicate.i: Predicate.cpp.i
 
 # target to preprocess a source file
 Predicate.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Predicate.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Predicate.cpp.i
 .PHONY : Predicate.cpp.i
 
 Predicate.s: Predicate.cpp.s
@@ -462,7 +462,7 @@ Predicate.s: Predicate.cpp.s
 
 # target to generate assembly for a file
 Predicate.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Predicate.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Predicate.cpp.s
 .PHONY : Predicate.cpp.s
 
 Relation.obj: Relation.cpp.obj
@@ -471,7 +471,7 @@ Relation.obj: Relation.cpp.obj
 
 # target to build an object file
 Relation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Relation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Relation.cpp.obj
 .PHONY : Relation.cpp.obj
 
 Relation.i: Relation.cpp.i
@@ -480,7 +480,7 @@ Relation.i: Relation.cpp.i
 
 # target to preprocess a source file
 Relation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Relation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Relation.cpp.i
 .PHONY : Relation.cpp.i
 
 Relation.s: Relation.cpp.s
@@ -489,7 +489,7 @@ Relation.s: Relation.cpp.s
 
 # target to generate assembly for a file
 Relation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Relation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Relation.cpp.s
 .PHONY : Relation.cpp.s
 
 Rule.obj: Rule.cpp.obj
@@ -498,7 +498,7 @@ Rule.obj: Rule.cpp.obj
 
 # target to build an object file
 Rule.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Rule.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Rule.cpp.obj
 .PHONY : Rule.cpp.obj
 
 Rule.i: Rule.cpp.i
@@ -507,7 +507,7 @@ Rule.i: Rule.cpp.i
 
 # target to preprocess a source file
 Rule.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Rule.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Rule.cpp.i
 .PHONY : Rule.cpp.i
 
 Rule.s: Rule.cpp.s
@@ -516,7 +516,7 @@ Rule.s: Rule.cpp.s
 
 # target to generate assembly for a file
 Rule.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Rule.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Rule.cpp.s
 .PHONY : Rule.cpp.s
 
 StringAutomaton.obj: StringAutomaton.cpp.obj
@@ -525,7 +525,7 @@ StringAutomaton.obj: StringAutomaton.cpp.obj
 
 # target to build an object file
 StringAutomaton.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/StringAutomaton.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/StringAutomaton.cpp.obj
 .PHONY : StringAutomaton.cpp.obj
 
 StringAutomaton.i: StringAutomaton.cpp.i
@@ -534,7 +534,7 @@ StringAutomaton.i: StringAutomaton.cpp.i
 
 # target to preprocess a source file
 StringAutomaton.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/StringAutomaton.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/StringAutomaton.cpp.i
 .PHONY : StringAutomaton.cpp.i
 
 StringAutomaton.s: StringAutomaton.cpp.s
@@ -543,7 +543,7 @@ StringAutomaton.s: StringAutomaton.cpp.s
 
 # target to generate assembly for a file
 StringAutomaton.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/StringAutomaton.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/StringAutomaton.cpp.s
 .PHONY : StringAutomaton.cpp.s
 
 Token.obj: Token.cpp.obj
@@ -552,7 +552,7 @@ Token.obj: Token.cpp.obj
 
 # target to build an object file
 Token.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Token.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Token.cpp.obj
 .PHONY : Token.cpp.obj
 
 Token.i: Token.cpp.i
@@ -561,7 +561,7 @@ Token.i: Token.cpp.i
 
 # target to preprocess a source file
 Token.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Token.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Token.cpp.i
 .PHONY : Token.cpp.i
 
 Token.s: Token.cpp.s
@@ -570,7 +570,7 @@ Token.s: Token.cpp.s
 
 # target to generate assembly for a file
 Token.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Token.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Token.cpp.s
 .PHONY : Token.cpp.s
 
 Tuple.obj: Tuple.cpp.obj
@@ -579,7 +579,7 @@ Tuple.obj: Tuple.cpp.obj
 
 # target to build an object file
 Tuple.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Tuple.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Tuple.cpp.obj
 .PHONY : Tuple.cpp.obj
 
 Tuple.i: Tuple.cpp.i
@@ -588,7 +588,7 @@ Tuple.i: Tuple.cpp.i
 
 # target to preprocess a source file
 Tuple.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Tuple.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Tuple.cpp.i
 .PHONY : Tuple.cpp.i
 
 Tuple.s: Tuple.cpp.s
@@ -597,7 +597,7 @@ Tuple.s: Tuple.cpp.s
 
 # target to generate assembly for a file
 Tuple.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/Tuple.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/Tuple.cpp.s
 .PHONY : Tuple.cpp.s
 
 main.obj: main.cpp.obj
@@ -606,7 +606,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -615,7 +615,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -624,7 +624,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_3_main.dir\build.make CMakeFiles/project_3_main.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_4_main.dir\build.make CMakeFiles/project_4_main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -635,7 +635,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... project_3_main
+	@echo ... project_4_main
 	@echo ... ColonAutomaton.obj
 	@echo ... ColonAutomaton.i
 	@echo ... ColonAutomaton.s
