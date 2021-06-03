@@ -142,3 +142,43 @@ void Relation::presentTuples(std::vector<int> positions, std::vector<std::string
         }
     }
 }
+
+Relation Relation::join(Relation rel1) {
+    Relation newRelation;
+    std::vector<int> relationInts, toAddInts;
+    newRelation.headers = headers;
+
+    for (unsigned int i = 0; i < rel1.headers.size(); i++) {
+        bool isCopy = false;
+        for (unsigned int j = 0; j < headers.size(); j++) {
+            if (!isCopy) {
+                if (headers.at(j) != rel1.headers.at(i)) {
+                    isCopy = false;
+                }
+                else {
+                    isCopy = true;
+                }
+            }
+        }
+        if (!isCopy) {
+            newRelation.headers.push_back(rel1.headers.at(i));
+            toAddInts.push_back(i);
+        }
+    }
+    for (Tuple t : tupleSet) {
+        for (Tuple tup : rel1.tupleSet) {
+            if (isJoinable(t, tup, headers, rel1.headers)) {
+               Tuple newTuple = t;
+               for (unsigned int k = 0; k < toAddInts.size(); k++) {
+                   newTuple.addValue(tup.getValues().at(toAddInts.at(k)));
+               }
+               newRelation.addTuple(newTuple);
+            }
+        }
+    }
+    return newRelation;
+}
+
+bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> scheme1, std::vector<std::string> scheme2) {
+    
+}

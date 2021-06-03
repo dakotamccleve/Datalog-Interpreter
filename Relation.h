@@ -24,10 +24,9 @@ public:
     Relation rename(std::vector<std::string> IDs);
     int numOfTuples(std::vector<std::string> vars);
     void presentTuples(std::vector<int> positions, std::vector<std::string> IDs, int number);
-    Relation join(Relation rel1);
-    Tuple combineHeaders();
-    Tuple combineTuples(Tuple tup1, Tuple tup2);
-    bool isJoinable(Tuple tup1, Tuple t2);
+    Relation join(Relation relToJoin);
+    bool isJoinable(Tuple tup1, Tuple t2, std::vector <std::string> scheme1, std::vector <std::string> scheme2);
+    bool unite(Relation ruleEvalRel);
 
 
 

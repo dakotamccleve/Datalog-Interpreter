@@ -11,7 +11,9 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
     for(Relation r : relations) {
         db.addRelation(r.getName(), r);
     }
-    //TODO: evalRules;
+    std::cout << "Rule Evaluation" << std::endl;
+    //TODO: Rule Evaluation
+    std::cout << "Query Evaluation" << std::endl;
     evalQueries(dataprog.getQueries());
 }
 
