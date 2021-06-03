@@ -16,6 +16,8 @@ public:
     void createTuples(std::vector<Predicate*> facts);
     Relation matchRelationFromQuery(Predicate* query);
     void evalQueries(std::vector<Predicate*> queries);
+    void RelationRules(std::vector<Rule*> Rules);
+    Relation EvaluatePredicate(Predicate* Predicates);
 
 private:
     Database db;

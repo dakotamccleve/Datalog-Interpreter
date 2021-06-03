@@ -180,5 +180,36 @@ Relation Relation::join(Relation rel1) {
 }
 
 bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> scheme1, std::vector<std::string> scheme2) {
-    
+    for(unsigned int i = 0; i < scheme1.size(); i++) {
+        for(unsigned int j = 0; j < scheme2.size(); j++) {
+            if (scheme1.at(i) == scheme2.at(j)) {
+                if (tup1.getValues().at(i) != t2.getValues().at(j)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+bool Relation::unite(Relation ruleEvalRel) {
+    bool returnVal = false;
+    for(auto t : ruleEvalRel.tupleSet) {
+        if(tupleSet.insert(t).second) {
+            returnVal = true;
+            if (headers.size() != 0) {
+                std::cout << "  ";
+            }
+            for (unsigned int j = 0; j < headers.size(); j++) {
+                std::cout << headers.at(j) + "=" + t.getValues().at(j);
+                if (j < headers.size()-1) {
+                    std::cout << ", ";
+                }
+            }
+            if (headers.size() != 0) {
+                std::cout << "\n";
+            }
+        }
+    }
+    return returnVal;
 }

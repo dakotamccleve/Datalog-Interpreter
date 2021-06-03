@@ -25,7 +25,7 @@ public:
     int numOfTuples(std::vector<std::string> vars);
     void presentTuples(std::vector<int> positions, std::vector<std::string> IDs, int number);
     Relation join(Relation relToJoin);
-    bool isJoinable(Tuple tup1, Tuple t2, std::vector <std::string> scheme1, std::vector <std::string> scheme2);
+    bool isJoinable(Tuple tup1, Tuple t2, std::vector <std::string> header1, std::vector <std::string> header2);
     bool unite(Relation ruleEvalRel);
 
 
@@ -34,8 +34,6 @@ private:
     std::string name;
     std::set<Tuple> tupleSet = {};
     std::vector<std::string> headers;
-
-
 };
 
 
