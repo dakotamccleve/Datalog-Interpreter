@@ -28,7 +28,6 @@ public:
     Relation join(Relation relToJoin);
     bool isJoinable(Tuple tup1, Tuple t2, std::vector <std::string> header1, std::vector <std::string> header2);
     bool unite(const Relation& ruleEvalRel);
-    std::vector<std::pair<int, int>> sameAttributes(Relation relation_II);
 
 private:
     std::string name;

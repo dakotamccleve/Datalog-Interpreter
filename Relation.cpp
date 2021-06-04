@@ -66,13 +66,11 @@ Relation Relation::project(std::vector<int> indices) {
     Relation r;
     r.name = this->name;
     r.headers = this->headers;
-    Tuple retTuple;
     for(Tuple t : tupleSet) {
+        Tuple retTuple;
         for(unsigned int i = 0; i < indices.size(); i++) {
             retTuple.addValue(t.getValues().at(indices.at(i)));
         }
-    }
-    if(retTuple.getValues().size() > 0) {
         r.addTuple(retTuple);
     }
     return r;
@@ -149,7 +147,7 @@ void Relation::presentTuples(std::vector<int> positions, std::vector<std::string
 
 Relation Relation::join(Relation rel1) {
     Relation newRelation;
-    std::vector<int> relationInts, toAddInts;
+    std::vector<int> toAddInts;
     newRelation.headers = headers;
     for (unsigned int i = 0; i < rel1.headers.size(); i++) {
         bool isCopy = false;

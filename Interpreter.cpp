@@ -106,8 +106,11 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
 }
 
 std::string Interpreter::evaluateRules(std::vector<Rule*> rules) {
+    std::cout << "Rule Evaluation" << std::endl;
     Relation returnRel;
     std::vector<Relation> intermedRels;
+    std::vector<int> headPredIndices;
+    std::vector<std::string> headPredsToRename;
     for(unsigned int i = 0; i < rules.size(); i++) {
         returnRel = evalPredicate(rules.at(i)->getPredicateList().at(0));
         for(unsigned int j =  1; j < rules.at(i)->getPredicateList().size(); j++) {
@@ -115,10 +118,20 @@ std::string Interpreter::evaluateRules(std::vector<Rule*> rules) {
         }
         if (intermedRels.size() > 0) {
             for (unsigned int j = 0; j < intermedRels.size(); j++) {
-               returnRel = returnRel.join(intermedRels.at(j));
+                returnRel = returnRel.join(intermedRels.at(j));
             }
+            for(unsigned int j = 0; j < rules.at(i)->getHeadPredicate()->getParameters().size(); j++) {
+                for (unsigned int k = 0; k < returnRel.getHeaders().size(); k++) {
+                    if ( returnRel.getHeaders().at(k) == rules.at(i)->getHeadPredicate()->getParameters().at(j)->getTokens().getData()) {
+                        headPredIndices.push_back(k);
+                        headPredsToRename.push_back(rules.at(i)->getHeadPredicate()->getParameters().at(j)->toString());
+                    }
+                }
+            }
+            returnRel = returnRel.project(headPredIndices);
+            returnRel = returnRel.rename(headPredsToRename);
         }
-        std::cout << "RELACION: "<< returnRel.toString();
+        //TODO THIS DOESNT WORK db.tables.at(returnRel.getName()).unite(returnRel);
     }
     return "";
 }
