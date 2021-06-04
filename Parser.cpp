@@ -363,7 +363,7 @@ Parameter* Parser::parameter(std::vector<Token*> tokens) {
     else {
         throw tokens.at(it);
     }
-    return new Parameter(tokens.at(parameterIt)); //TODO:: Something with expressions maybe?
+    return new Parameter(tokens.at(parameterIt));
 }
 
 std::vector<Parameter*> Parser::parameterList(std::vector<Token*> tokens) {

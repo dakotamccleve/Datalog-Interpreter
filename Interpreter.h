@@ -8,6 +8,8 @@
 #include "Database.h"
 #include "DatalogProgram.h"
 
+#include <sstream>
+
 
 class Interpreter {
 public:
@@ -16,14 +18,13 @@ public:
     void createTuples(std::vector<Predicate*> facts);
     Relation matchRelationFromQuery(Predicate* query);
     void evalQueries(std::vector<Predicate*> queries);
-    void RelationRules(std::vector<Rule*> Rules);
-    Relation EvaluatePredicate(Predicate* Predicates);
+    Relation evalPredicate(Predicate* queries);
+    std::string evaluateRules(std::vector<Rule*> rules);
 
 private:
     Database db;
     std::vector<Tuple> tuples;
     std::vector<Relation> relations;
-
 };
 
 

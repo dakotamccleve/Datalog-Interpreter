@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/dakot/Documents/cs236/cs236-project-4/Automaton.h
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Token.h
-
-C:/Users/dakot/Documents/cs236/cs236-project-4/Database.cpp
-Database.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Database.h
-
 C:/Users/dakot/Documents/cs236/cs236-project-4/Database.h
 Relation.h
 C:/Users/dakot/Documents/cs236/cs236-project-4/Relation.h
@@ -41,36 +33,12 @@ Database.h
 C:/Users/dakot/Documents/cs236/cs236-project-4/Database.h
 DatalogProgram.h
 C:/Users/dakot/Documents/cs236/cs236-project-4/DatalogProgram.h
-
-C:/Users/dakot/Documents/cs236/cs236-project-4/Lexer.h
-vector
+sstream
 -
-string
--
-cctype
--
-Automaton.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Automaton.h
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Token.h
 
 C:/Users/dakot/Documents/cs236/cs236-project-4/Parameter.h
 Token.h
 C:/Users/dakot/Documents/cs236/cs236-project-4/Token.h
-
-C:/Users/dakot/Documents/cs236/cs236-project-4/Parser.h
-vector
--
-string
--
-iostream
--
-cctype
--
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Token.h
-DatalogProgram.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/DatalogProgram.h
 
 C:/Users/dakot/Documents/cs236/cs236-project-4/Predicate.h
 Parameter.h
@@ -79,10 +47,6 @@ vector
 -
 sstream
 -
-
-C:/Users/dakot/Documents/cs236/cs236-project-4/Relation.cpp
-Relation.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Relation.h
 
 C:/Users/dakot/Documents/cs236/cs236-project-4/Relation.h
 Tuple.h
@@ -108,17 +72,5 @@ string
 vector
 -
 iostream
--
-
-C:/Users/dakot/Documents/cs236/cs236-project-4/main.cpp
-Lexer.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Lexer.h
-Parser.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Parser.h
-Interpreter.h
-C:/Users/dakot/Documents/cs236/cs236-project-4/Interpreter.h
-iostream
--
-fstream
 -
 

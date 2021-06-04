@@ -11,8 +11,7 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
     for(Relation r : relations) {
         db.addRelation(r.getName(), r);
     }
-    std::cout << "Rule Evaluation" << std::endl;
-    //TODO: Rule Evaluation
+    evaluateRules(dataprog.getRules());
     std::cout << "Query Evaluation" << std::endl;
     evalQueries(dataprog.getQueries());
 }
@@ -85,6 +84,8 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
         matchRel = matchRel.project(indices);
         matchRel = matchRel.rename(queryVars);
 
+        //Output queries below
+
         std::stringstream ss;
         for(unsigned int i = 0; i < qParams.size(); i++) {
             ss << qParams[i]->toString();
@@ -102,4 +103,56 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
         }
         matchRel.presentTuples(indices, queryVars, num);
     }
+}
+
+std::string Interpreter::evaluateRules(std::vector<Rule*> rules) {
+    Relation returnRel;
+    std::vector<Relation> intermedRels;
+    for(unsigned int i = 0; i < rules.size(); i++) {
+        returnRel = evalPredicate(rules.at(i)->getPredicateList().at(0));
+        for(unsigned int j =  1; j < rules.at(i)->getPredicateList().size(); j++) {
+           intermedRels.push_back(evalPredicate(rules.at(i)->getPredicateList().at(j)));
+        }
+        if (intermedRels.size() > 0) {
+            for (unsigned int j = 0; j < intermedRels.size(); j++) {
+               returnRel = returnRel.join(intermedRels.at(j));
+            }
+        }
+        std::cout << "RELACION: "<< returnRel.toString();
+    }
+    return "";
+}
+
+Relation Interpreter::evalPredicate(Predicate* queries) {
+    Relation matchRel;
+        std::vector<int> indices;
+        std::vector<std::string> queryVars;
+        matchRel = matchRelationFromQuery(queries);
+        std::vector<Parameter *> qParams = queries->getParameters();
+        int dupPos = 0;
+        for (unsigned int i = 0; i < qParams.size(); i++) {
+            std::string tType = qParams[i]->getTokens().getTokenType();
+            std::string tData = qParams[i]->getTokens().getData();
+            bool isDuplicateVar = false;
+            if (tType == "STRING") {
+                matchRel = matchRel.select(i, tData);
+            } else if (tType == "ID") {
+                for (unsigned int j = 0; j < queryVars.size(); j++) {
+                    if (queryVars[j] == tData) {
+                        isDuplicateVar = true;
+                        dupPos = j;
+                    }
+                }
+            }
+            if (isDuplicateVar) {
+                matchRel = matchRel.select(dupPos, i);
+            } else {
+                queryVars.push_back(tData);
+                indices.push_back(i);
+            }
+        }
+        matchRel = matchRel.project(indices);
+        matchRel = matchRel.rename(queryVars);
+
+    return matchRel;
 }

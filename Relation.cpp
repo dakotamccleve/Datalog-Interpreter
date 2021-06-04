@@ -13,6 +13,10 @@ void Relation::addTuple(const Tuple &tuple) {
     tupleSet.insert(tuple);
 }
 
+std::vector<std::string> Relation::getHeaders() {
+    return headers;
+}
+
 std::string Relation::toString() {
     std::string str;
     str += name + "( ";
@@ -147,7 +151,6 @@ Relation Relation::join(Relation rel1) {
     Relation newRelation;
     std::vector<int> relationInts, toAddInts;
     newRelation.headers = headers;
-
     for (unsigned int i = 0; i < rel1.headers.size(); i++) {
         bool isCopy = false;
         for (unsigned int j = 0; j < headers.size(); j++) {
@@ -168,31 +171,32 @@ Relation Relation::join(Relation rel1) {
     for (Tuple t : tupleSet) {
         for (Tuple tup : rel1.tupleSet) {
             if (isJoinable(t, tup, headers, rel1.headers)) {
-               Tuple newTuple = t;
-               for (unsigned int k = 0; k < toAddInts.size(); k++) {
-                   newTuple.addValue(tup.getValues().at(toAddInts.at(k)));
-               }
-               newRelation.addTuple(newTuple);
+                Tuple newTuple = t;
+                for (unsigned int k = 0; k < toAddInts.size(); k++) {
+                    newTuple.addValue(tup.getValues().at(toAddInts.at(k)));
+                }
+                newRelation.addTuple(newTuple);
             }
         }
     }
     return newRelation;
 }
 
-bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> scheme1, std::vector<std::string> scheme2) {
-    for(unsigned int i = 0; i < scheme1.size(); i++) {
-        for(unsigned int j = 0; j < scheme2.size(); j++) {
-            if (scheme1.at(i) == scheme2.at(j)) {
-                if (tup1.getValues().at(i) != t2.getValues().at(j)) {
-                    return false;
+
+bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> header1, std::vector<std::string> header2) {
+    for(unsigned int i = 0; i < header1.size(); i++) {
+        for(unsigned int j = 0; j < header2.size(); j++) {
+            if (header1.at(i) == header2.at(j)) {
+                if (tup1.getValues().at(i) == t2.getValues().at(j)) {
+                    return true;
                 }
             }
         }
     }
-    return true;
+    return false;
 }
 
-bool Relation::unite(Relation ruleEvalRel) {
+bool Relation::unite(const Relation& ruleEvalRel) {
     bool returnVal = false;
     for(auto t : ruleEvalRel.tupleSet) {
         if(tupleSet.insert(t).second) {
@@ -206,7 +210,7 @@ bool Relation::unite(Relation ruleEvalRel) {
                     std::cout << ", ";
                 }
             }
-            if (headers.size() != 0) {
+            if (!headers.empty()) {
                 std::cout << "\n";
             }
         }

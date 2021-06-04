@@ -18,6 +18,7 @@ public:
     void addTuple(const Tuple& tuple);
     std::string getName();
     std::set<Tuple> getTuples();
+    std::vector<std::string> getHeaders();
     Relation select(int index, std::string value);
     Relation select(int index, int index2);
     Relation project(std::vector<int> indices);
@@ -26,9 +27,8 @@ public:
     void presentTuples(std::vector<int> positions, std::vector<std::string> IDs, int number);
     Relation join(Relation relToJoin);
     bool isJoinable(Tuple tup1, Tuple t2, std::vector <std::string> header1, std::vector <std::string> header2);
-    bool unite(Relation ruleEvalRel);
-
-
+    bool unite(const Relation& ruleEvalRel);
+    std::vector<std::pair<int, int>> sameAttributes(Relation relation_II);
 
 private:
     std::string name;

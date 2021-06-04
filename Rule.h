@@ -7,7 +7,6 @@
 
 class Rule {
 private:
-    std::string name;
     Predicate* predicate;
     std::vector<Predicate*> predicateList;
 public:
