@@ -187,6 +187,17 @@ Relation Relation::join(Relation rel1) {
 
 bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> header1, std::vector<std::string> header2) {
     bool completelyUnique = true;
+    if(header1 == header2 && tup1.getValues() != t2.getValues()) {
+        return false;
+    }
+    else if(header1.size() > 1 && header2.size() > 1 && header1.at(1) == header2.at(0) && header2.at(1) == header1.at(0)) {
+        if(tup1.getValues().at(0) == t2.getValues().at(1) && tup1.getValues().at(1) == t2.getValues().at(0)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
     for(unsigned int i = 0; i < header1.size(); i++) {
         for(unsigned int j = 0; j < header2.size(); j++) {
             if (header1.at(i) == header2.at(j)) {
