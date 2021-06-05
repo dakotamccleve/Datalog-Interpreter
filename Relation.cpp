@@ -186,16 +186,23 @@ Relation Relation::join(Relation rel1) {
 
 
 bool Relation::isJoinable(Tuple tup1, Tuple t2, std::vector<std::string> header1, std::vector<std::string> header2) {
+    bool completelyUnique = true;
     for(unsigned int i = 0; i < header1.size(); i++) {
         for(unsigned int j = 0; j < header2.size(); j++) {
             if (header1.at(i) == header2.at(j)) {
+                completelyUnique = false;
                 if (tup1.getValues().at(i) == t2.getValues().at(j)) {
                     return true;
                 }
             }
         }
     }
-    return false;
+    if (completelyUnique) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 bool Relation::unite(const Relation& ruleEvalRel) {
