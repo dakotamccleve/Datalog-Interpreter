@@ -12,6 +12,7 @@ class Database {
 public:
     void addRelation(std::string name, Relation relation);
     std::map<std::string, Relation> tables;
+    void getRelations();
 
 };
 

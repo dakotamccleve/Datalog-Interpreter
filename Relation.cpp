@@ -9,6 +9,10 @@ Relation::Relation(std::string tableName, std::vector<std::string> newHeaders) {
     name = std::move(tableName);
 }
 
+void Relation::setName(std::string newName) {
+    name = newName;
+}
+
 void Relation::addTuple(const Tuple &tuple) {
     tupleSet.insert(tuple);
 }
@@ -108,10 +112,10 @@ void Relation::presentTuples(std::vector<int> positions, std::vector<std::string
         }
     }
     unsigned int idsToPrint = positions.size() - indicesToSkip.size();
-    unsigned int totalItemsToPrint = idsToPrint * number;
-    unsigned int totalPrintedItems = 0;
+    unsigned int totalItemsToPrint = idsToPrint;
     if(totalItemsToPrint) {
         for (Tuple t: tupleSet) {
+            unsigned int totalPrintedItems = 0;
             std::string str = "  ";
             unsigned int indexCounter = 0;
             unsigned int loopCount = 1;
@@ -130,7 +134,7 @@ void Relation::presentTuples(std::vector<int> positions, std::vector<std::string
                         str += "\n";
                     }
                     else if (i < t.getValues().size()) {
-                        str += "\n  ";
+                        str += "\n";
                     }
                 }
                 else {
@@ -198,6 +202,7 @@ bool Relation::unite(const Relation& ruleEvalRel) {
     bool returnVal = false;
     for(auto t : ruleEvalRel.tupleSet) {
         if(tupleSet.insert(t).second) {
+
             returnVal = true;
             if (headers.size() != 0) {
                 std::cout << "  ";

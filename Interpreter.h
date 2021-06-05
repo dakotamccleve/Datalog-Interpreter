@@ -19,7 +19,8 @@ public:
     Relation matchRelationFromQuery(Predicate* query);
     void evalQueries(std::vector<Predicate*> queries);
     Relation evalPredicate(Predicate* queries);
-    std::string evaluateRules(std::vector<Rule*> rules);
+    void evaluateRules(std::vector<Rule*> rules);
+    void addRelation(Relation relToAdd);
 
 private:
     Database db;

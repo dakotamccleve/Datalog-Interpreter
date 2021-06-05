@@ -41,11 +41,11 @@ void Interpreter::createTuples(std::vector<Predicate*> facts) {
 
 Relation Interpreter::matchRelationFromQuery(Predicate* query) {
     unsigned int i = 0;
-    while((query->getName() != relations[i].getName()) || i == relations.size()) {
+    while((query->getName() != db.tables.at(query->getName()).getName()) || i == db.tables.size()) {
         i++;
     }
-    if(query->getName() == relations[i].getName()) {
-        return relations[i];
+    if((query->getName() == db.tables.at(query->getName()).getName())) {
+        return db.tables.at(query->getName());
     }
     else return {};
 }
@@ -105,35 +105,47 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
     }
 }
 
-std::string Interpreter::evaluateRules(std::vector<Rule*> rules) {
+void Interpreter::evaluateRules(std::vector<Rule*> rules) {
     std::cout << "Rule Evaluation" << std::endl;
-    Relation returnRel;
-    std::vector<Relation> intermedRels;
-    std::vector<int> headPredIndices;
-    std::vector<std::string> headPredsToRename;
-    for(unsigned int i = 0; i < rules.size(); i++) {
-        returnRel = evalPredicate(rules.at(i)->getPredicateList().at(0));
-        for(unsigned int j =  1; j < rules.at(i)->getPredicateList().size(); j++) {
-           intermedRels.push_back(evalPredicate(rules.at(i)->getPredicateList().at(j)));
-        }
-        if (intermedRels.size() > 0) {
-            for (unsigned int j = 0; j < intermedRels.size(); j++) {
-                returnRel = returnRel.join(intermedRels.at(j));
+    int passTimes = 0;
+    bool keepGoing = true;
+    while(keepGoing) {
+        passTimes++;
+        keepGoing = false;
+        for (unsigned int i = 0; i < rules.size(); i++) {
+            Relation returnRel;
+            std::vector<Relation> intermedRels;
+            std::vector<int> headPredIndices;
+            std::vector<std::string> headPredsToRename;
+            std::cout << rules.at(i)->toString();
+            returnRel = evalPredicate(rules.at(i)->getPredicateList().at(0));
+            for (unsigned int j = 1; j < rules.at(i)->getPredicateList().size(); j++) {
+                intermedRels.push_back(evalPredicate(rules.at(i)->getPredicateList().at(j)));
             }
-            for(unsigned int j = 0; j < rules.at(i)->getHeadPredicate()->getParameters().size(); j++) {
-                for (unsigned int k = 0; k < returnRel.getHeaders().size(); k++) {
-                    if ( returnRel.getHeaders().at(k) == rules.at(i)->getHeadPredicate()->getParameters().at(j)->getTokens().getData()) {
-                        headPredIndices.push_back(k);
-                        headPredsToRename.push_back(rules.at(i)->getHeadPredicate()->getParameters().at(j)->toString());
-                    }
+            if (intermedRels.size() > 0) {
+                for (unsigned int j = 0; j < intermedRels.size(); j++) {
+                    returnRel = returnRel.join(intermedRels.at(j));
                 }
             }
-            returnRel = returnRel.project(headPredIndices);
-            returnRel = returnRel.rename(headPredsToRename);
+                for (unsigned int j = 0; j < rules.at(i)->getHeadPredicate()->getParameters().size(); j++) {
+                    for (unsigned int k = 0; k < returnRel.getHeaders().size(); k++) {
+                        if (returnRel.getHeaders().at(k) ==
+                            rules.at(i)->getHeadPredicate()->getParameters().at(j)->getTokens().getData()) {
+                            headPredIndices.push_back(k);
+                            headPredsToRename.push_back(rules.at(i)->getHeadPredicate()->getParameters().at(j)->toString());
+                        }
+                    }
+                }
+                returnRel = returnRel.project(headPredIndices);
+                returnRel = returnRel.rename(headPredsToRename);
+                returnRel.setName(rules.at(i)->getHeadPredicate()->getName());
+
+                if(db.tables.at(returnRel.getName()).unite(returnRel)) {
+                    keepGoing = true;
+                }
         }
-        //TODO THIS DOESNT WORK db.tables.at(returnRel.getName()).unite(returnRel);
     }
-    return "";
+    std::cout << std::endl << "Schemes populated after " << passTimes << " passes through the Rules." << std::endl << std::endl;
 }
 
 Relation Interpreter::evalPredicate(Predicate* queries) {

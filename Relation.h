@@ -17,6 +17,7 @@ public:
     std::string toString();
     void addTuple(const Tuple& tuple);
     std::string getName();
+    void setName(std::string newName);
     std::set<Tuple> getTuples();
     std::vector<std::string> getHeaders();
     Relation select(int index, std::string value);

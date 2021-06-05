@@ -48,9 +48,6 @@ public:
     std::vector<Predicate*> getQueries() {
         return queries;
     }
-    std::set<std::string> getDomain() {
-        return domain;
-    }
     std::string toString();
 
 
