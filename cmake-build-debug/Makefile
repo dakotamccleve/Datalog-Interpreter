@@ -276,6 +276,33 @@ DatalogProgram.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_5_main.dir\build.make CMakeFiles/project_5_main.dir/DatalogProgram.cpp.s
 .PHONY : DatalogProgram.cpp.s
 
+Graph.obj: Graph.cpp.obj
+
+.PHONY : Graph.obj
+
+# target to build an object file
+Graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_5_main.dir\build.make CMakeFiles/project_5_main.dir/Graph.cpp.obj
+.PHONY : Graph.cpp.obj
+
+Graph.i: Graph.cpp.i
+
+.PHONY : Graph.i
+
+# target to preprocess a source file
+Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_5_main.dir\build.make CMakeFiles/project_5_main.dir/Graph.cpp.i
+.PHONY : Graph.cpp.i
+
+Graph.s: Graph.cpp.s
+
+.PHONY : Graph.s
+
+# target to generate assembly for a file
+Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\project_5_main.dir\build.make CMakeFiles/project_5_main.dir/Graph.cpp.s
+.PHONY : Graph.cpp.s
+
 IDAutomaton.obj: IDAutomaton.cpp.obj
 
 .PHONY : IDAutomaton.obj
@@ -651,6 +678,9 @@ help:
 	@echo ... DatalogProgram.obj
 	@echo ... DatalogProgram.i
 	@echo ... DatalogProgram.s
+	@echo ... Graph.obj
+	@echo ... Graph.i
+	@echo ... Graph.s
 	@echo ... IDAutomaton.obj
 	@echo ... IDAutomaton.i
 	@echo ... IDAutomaton.s

@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/DatalogProgram.h">
 			<Option target="project_5_main"/>
 		</Unit>
+		<Unit filename="C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.cpp">
+			<Option target="project_5_main"/>
+		</Unit>
+		<Unit filename="C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h">
+			<Option target="project_5_main"/>
+		</Unit>
 		<Unit filename="C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/IDAutomaton.cpp">
 			<Option target="project_5_main"/>
 		</Unit>

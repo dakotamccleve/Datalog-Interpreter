@@ -28,6 +28,17 @@ CMakeFiles/project_5_main.dir/DatalogProgram.cpp.obj: ../Predicate.h
 CMakeFiles/project_5_main.dir/DatalogProgram.cpp.obj: ../Rule.h
 CMakeFiles/project_5_main.dir/DatalogProgram.cpp.obj: ../Token.h
 
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Database.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../DatalogProgram.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Graph.cpp
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Graph.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Parameter.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Predicate.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Relation.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Rule.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Token.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj: ../Tuple.h
+
 CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj: ../Automaton.h
 CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj: ../IDAutomaton.cpp
 CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj: ../IDAutomaton.h
@@ -35,6 +46,7 @@ CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj: ../Token.h
 
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../Database.h
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../DatalogProgram.h
+CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../Graph.h
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../Interpreter.cpp
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../Interpreter.h
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj: ../Parameter.h
@@ -101,6 +113,7 @@ CMakeFiles/project_5_main.dir/Tuple.cpp.obj: ../Tuple.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../Automaton.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../Database.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../DatalogProgram.h
+CMakeFiles/project_5_main.dir/main.cpp.obj: ../Graph.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../Interpreter.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../Lexer.h
 CMakeFiles/project_5_main.dir/main.cpp.obj: ../Parameter.h

@@ -7,6 +7,7 @@
 
 #include "Database.h"
 #include "DatalogProgram.h"
+#include "Graph.h"
 
 #include <sstream>
 

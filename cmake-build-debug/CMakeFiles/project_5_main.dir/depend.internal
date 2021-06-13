@@ -28,6 +28,17 @@ CMakeFiles/project_5_main.dir/DatalogProgram.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Predicate.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Rule.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
+CMakeFiles/project_5_main.dir/Graph.cpp.obj
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Database.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/DatalogProgram.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.cpp
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parameter.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Predicate.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Relation.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Rule.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Tuple.h
 CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Automaton.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/IDAutomaton.cpp
@@ -36,6 +47,7 @@ CMakeFiles/project_5_main.dir/IDAutomaton.cpp.obj
 CMakeFiles/project_5_main.dir/Interpreter.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Database.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/DatalogProgram.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Interpreter.cpp
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Interpreter.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parameter.h
@@ -102,6 +114,7 @@ CMakeFiles/project_5_main.dir/main.cpp.obj
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Automaton.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Database.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/DatalogProgram.h
+ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Interpreter.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Lexer.h
  C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parameter.h

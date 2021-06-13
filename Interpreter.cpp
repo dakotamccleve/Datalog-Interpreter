@@ -11,6 +11,9 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
     for(Relation r : relations) {
         db.addRelation(r.getName(), r);
     }
+    Graph graph;
+    graph.createGraph(dataprog.getRules());
+    graph.toString();
     evaluateRules(dataprog.getRules());
     std::cout << "Query Evaluation" << std::endl;
     evalQueries(dataprog.getQueries());
