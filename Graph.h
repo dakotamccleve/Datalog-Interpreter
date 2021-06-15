@@ -13,29 +13,21 @@
 
 class Graph {
 public:
-    Graph() {};
+    Graph() = default;
     void createGraph(std::vector<Rule*> rules);
     void dfsPostOrder(int v);
     void dfsSCC(int v);
     void dfsForestPostOrder();
     void dfsForestSCC();
     void toString();
-    void visitedToString();
+    std::map<int,std::set<int>> getAdjList();
     std::stack<int> postOrder; //postOrder reversal
     std::vector<std::set<int>> scc;
-private:
     std::map<int,std::set<int>> adjacencyList; //first int is rule index, set is all rules that rule index is adjacent to
     std::map<int,std::set<int>> reverseList;
     std::map<int,bool> visited;
     std::set<int> local;
 };
-
-
-/* TODO:
-    Run DFS-Forest on the reverse dependency graph to get the post-order.
-    Use the post-order for a DFS-Forest on the forward dependency graph to find the strongly connected components (SCCs).
-    Evaluate the rules in each component.
-*/
 
 
 

@@ -117,7 +117,7 @@ void Interpreter::evaluateRules(std::vector<Rule*> rules, Graph graph) {
         int passTimes = 0;
         bool keepGoing = true;
         std::cout << "SCC: ";
-        int counter = 0;
+        unsigned int counter = 0;
         for (auto it : graph.scc.at(b)) {
             std::cout << "R" << it;
             sccRules.push_back(rules.at(it));
@@ -130,6 +130,7 @@ void Interpreter::evaluateRules(std::vector<Rule*> rules, Graph graph) {
         while (keepGoing) {
             passTimes++;
             keepGoing = false;
+            bool addedToDB = false;
 
             for (unsigned int i = 0; i < sccRules.size(); i++) {
                 Relation returnRel;
@@ -162,14 +163,29 @@ void Interpreter::evaluateRules(std::vector<Rule*> rules, Graph graph) {
 
                 if (db.tables.at(returnRel.getName()).unite(returnRel)) {
                     keepGoing = true;
+                    addedToDB = true;
                 }
-            }
-            if(graph.scc.at(b).size() == 1) {
-                keepGoing = false;
+                for(auto u : graph.scc.at(b)) {
+                    if(graph.adjacencyList.at(u).empty()) {
+                        keepGoing = false;
+                    }
+                    for(auto y : graph.adjacencyList.at(u)) {
+                        if((y == u && addedToDB)) {
+                            keepGoing = true;
+                            break;
+                        }
+                        else {
+                            keepGoing = false;
+                        }
+                    }
+                }
+                if(graph.scc.at(b).size() > 1 && addedToDB) {
+                    keepGoing = true;
+                }
             }
         }
         std::cout << passTimes << " passes: ";
-        int whatever = 0;
+        unsigned int whatever = 0;
         for (auto it : graph.scc.at(b)) {
             std::cout << "R" << it;
             whatever++;

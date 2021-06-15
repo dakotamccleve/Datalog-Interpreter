@@ -21,7 +21,6 @@ public:
     void evalQueries(std::vector<Predicate*> queries);
     Relation evalPredicate(Predicate* queries);
     void evaluateRules(std::vector<Rule*> rules, Graph graph);
-    void addRelation(Relation relToAdd);
 
 private:
     Database db;

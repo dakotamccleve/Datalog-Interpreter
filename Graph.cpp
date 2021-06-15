@@ -25,7 +25,7 @@ void Graph::createGraph(std::vector<Rule*> rules) {
 void Graph::toString() {
     std::cout << "Dependency Graph" << std::endl;
     for(auto it : adjacencyList) {
-        int commaMarker = 0;
+        unsigned int commaMarker = 0;
         std::cout << "R" << it.first << ":";
         for(auto i : it.second) {
             std::cout << "R" << i;
@@ -54,7 +54,7 @@ void Graph::dfsForestPostOrder() {
             dfsPostOrder(i.first);
         }
     }
-    for(int i = 0; i < visited.size(); i++) {
+    for(unsigned int i = 0; i < visited.size(); i++) {
     visited.at(i) = 0;
     }
 }
@@ -84,17 +84,6 @@ void Graph::dfsSCC(int v) {
     }
 }
 
-
-void Graph::visitedToString() {
-    for(unsigned int i = 0; i < scc.size(); i++) {
-        std::cout << "SCC: ";
-        for(auto it : scc.at(i)) {
-            std::cout << "R" << it;
-            if(it != scc.size()) {
-                std::cout << ",";
-            }
-        }
-        std::cout << std::endl;
-    }
-    std::cout << std::endl;
+std::map<int,std::set<int>> Graph::getAdjList() {
+    return adjacencyList;
 }
