@@ -7,6 +7,7 @@
 void Graph::createGraph(std::vector<Rule*> rules) {
     for(unsigned int i = 0; i < rules.size(); i++) {
         adjacencyList[i];
+        visited[i];
         reverseList[i];
     }
     for(unsigned int i = 0; i < rules.size(); i++) {
@@ -37,34 +38,63 @@ void Graph::toString() {
     std::cout << std::endl;
 }
 
-void Graph::reverseToString() {
-    std::cout << "Dependency Graph" << std::endl;
-    for(auto it : reverseList) {
-        int commaMarker = 0;
-        std::cout << "R" << it.first << ":";
-        for(auto i : it.second) {
-            std::cout << "R" << i;
-            commaMarker++;
-            if(commaMarker != it.second.size())
+void Graph::dfsPostOrder(int v) {
+    visited.at(v) = 1;
+    for(auto i : reverseList[v]) {
+        if(!visited.at(i)) {
+            dfsPostOrder(i);
+        }
+    }
+    postOrder.push(v);
+}
+
+void Graph::dfsForestPostOrder() {
+    for(auto i : reverseList) {
+        if(!visited.at(i.first)) {
+            dfsPostOrder(i.first);
+        }
+    }
+    for(int i = 0; i < visited.size(); i++) {
+    visited.at(i) = 0;
+    }
+}
+
+void Graph::dfsForestSCC() {
+    while(!postOrder.empty()) {
+        if(!visited.at(postOrder.top())) {
+            dfsSCC(postOrder.top());
+        }
+        if(!local.empty()) {
+            scc.push_back(local);
+            local.clear();
+        }
+        postOrder.pop();
+    }
+}
+
+void Graph::dfsSCC(int v) {
+    if(!visited[v]) {
+        visited.at(v) = 1;
+        local.insert(v);
+        for (auto i : adjacencyList[v]) {
+            if(!visited[i]) {
+                dfsSCC(i);
+            }
+        }
+    }
+}
+
+
+void Graph::visitedToString() {
+    for(unsigned int i = 0; i < scc.size(); i++) {
+        std::cout << "SCC: ";
+        for(auto it : scc.at(i)) {
+            std::cout << "R" << it;
+            if(it != scc.size()) {
                 std::cout << ",";
+            }
         }
         std::cout << std::endl;
     }
     std::cout << std::endl;
-}
-
-void Graph::dfs() {
-
-}
-
-void Graph::dfsForestPostOrder() {
-
-}
-
-void Graph::dfsForestSCC() {
-
-}
-
-void Graph::addEdge(int i, int j) {
-
 }

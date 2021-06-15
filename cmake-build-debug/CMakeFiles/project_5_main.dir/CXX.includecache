@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Automaton.h
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
-
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Database.h
 Relation.h
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Relation.h
@@ -27,10 +23,6 @@ set
 -
 Rule.h
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Rule.h
-
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.cpp
-Graph.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
 
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
 DatalogProgram.h
@@ -58,35 +50,9 @@ C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Graph.h
 sstream
 -
 
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Lexer.h
-vector
--
-string
--
-cctype
--
-Automaton.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Automaton.h
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
-
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parameter.h
 Token.h
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
-
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parser.h
-vector
--
-string
--
-iostream
--
-cctype
--
-Token.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Token.h
-DatalogProgram.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/DatalogProgram.h
 
 C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Predicate.h
 Parameter.h
@@ -120,17 +86,5 @@ string
 vector
 -
 iostream
--
-
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/main.cpp
-Lexer.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Lexer.h
-Parser.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Parser.h
-Interpreter.h
-C:/Users/dakot/Documents/cs236/cs236-project-5/cs236-project-5/Interpreter.h
-iostream
--
-fstream
 -
 

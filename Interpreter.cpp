@@ -14,8 +14,10 @@ Interpreter::Interpreter(DatalogProgram dataprog) {
     Graph graph;
     graph.createGraph(dataprog.getRules());
     graph.toString();
-    evaluateRules(dataprog.getRules());
-    std::cout << "Query Evaluation" << std::endl;
+    graph.dfsForestPostOrder();
+    graph.dfsForestSCC();
+    evaluateRules(dataprog.getRules(), graph);
+    std::cout << std::endl << "Query Evaluation" << std::endl;
     evalQueries(dataprog.getQueries());
 }
 
@@ -108,47 +110,76 @@ void Interpreter::evalQueries(std::vector<Predicate*> queries) {
     }
 }
 
-void Interpreter::evaluateRules(std::vector<Rule*> rules) {
+void Interpreter::evaluateRules(std::vector<Rule*> rules, Graph graph) {
     std::cout << "Rule Evaluation" << std::endl;
-    int passTimes = 0;
-    bool keepGoing = true;
-    while(keepGoing) {
-        passTimes++;
-        keepGoing = false;
-        for (unsigned int i = 0; i < rules.size(); i++) {
-            Relation returnRel;
-            std::vector<Relation> intermedRels;
-            std::vector<int> headPredIndices;
-            std::vector<std::string> headPredsToRename;
-            std::cout << rules.at(i)->toString();
-            returnRel = evalPredicate(rules.at(i)->getPredicateList().at(0));
-            for (unsigned int j = 1; j < rules.at(i)->getPredicateList().size(); j++) {
-                intermedRels.push_back(evalPredicate(rules.at(i)->getPredicateList().at(j)));
+    for(unsigned int b = 0; b < graph.scc.size(); b++) {
+        std::vector<Rule*> sccRules;
+        int passTimes = 0;
+        bool keepGoing = true;
+        std::cout << "SCC: ";
+        int counter = 0;
+        for (auto it : graph.scc.at(b)) {
+            std::cout << "R" << it;
+            sccRules.push_back(rules.at(it));
+            counter++;
+            if (counter < graph.scc.at(b).size()) {
+                std::cout << ",";
             }
-            if (intermedRels.size() > 0) {
-                for (unsigned int j = 0; j < intermedRels.size(); j++) {
-                    returnRel = returnRel.join(intermedRels.at(j));
+        }
+        std::cout << std::endl;
+        while (keepGoing) {
+            passTimes++;
+            keepGoing = false;
+
+            for (unsigned int i = 0; i < sccRules.size(); i++) {
+                Relation returnRel;
+                std::vector<Relation> intermedRels;
+                std::vector<int> headPredIndices;
+                std::vector<std::string> headPredsToRename;
+                std::cout << sccRules.at(i)->toString();
+                returnRel = evalPredicate(sccRules.at(i)->getPredicateList().at(0));
+                for (unsigned int j = 1; j < sccRules.at(i)->getPredicateList().size(); j++) {
+                    intermedRels.push_back(evalPredicate(sccRules.at(i)->getPredicateList().at(j)));
                 }
-            }
-                for (unsigned int j = 0; j < rules.at(i)->getHeadPredicate()->getParameters().size(); j++) {
+                if (intermedRels.size() > 0) {
+                    for (unsigned int j = 0; j < intermedRels.size(); j++) {
+                        returnRel = returnRel.join(intermedRels.at(j));
+                    }
+                }
+                for (unsigned int j = 0; j < sccRules.at(i)->getHeadPredicate()->getParameters().size(); j++) {
                     for (unsigned int k = 0; k < returnRel.getHeaders().size(); k++) {
                         if (returnRel.getHeaders().at(k) ==
-                            rules.at(i)->getHeadPredicate()->getParameters().at(j)->getTokens().getData()) {
+                            sccRules.at(i)->getHeadPredicate()->getParameters().at(j)->getTokens().getData()) {
                             headPredIndices.push_back(k);
-                            headPredsToRename.push_back(rules.at(i)->getHeadPredicate()->getParameters().at(j)->toString());
+                            headPredsToRename.push_back(
+                                    sccRules.at(i)->getHeadPredicate()->getParameters().at(j)->toString());
                         }
                     }
                 }
                 returnRel = returnRel.project(headPredIndices);
                 returnRel = returnRel.rename(headPredsToRename);
-                returnRel.setName(rules.at(i)->getHeadPredicate()->getName());
+                returnRel.setName(sccRules.at(i)->getHeadPredicate()->getName());
 
-                if(db.tables.at(returnRel.getName()).unite(returnRel)) {
+                if (db.tables.at(returnRel.getName()).unite(returnRel)) {
                     keepGoing = true;
                 }
+            }
+            if(graph.scc.at(b).size() == 1) {
+                keepGoing = false;
+            }
         }
+        std::cout << passTimes << " passes: ";
+        int whatever = 0;
+        for (auto it : graph.scc.at(b)) {
+            std::cout << "R" << it;
+            whatever++;
+            if (whatever < graph.scc.at(b).size()) {
+                std::cout << ",";
+            }
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl << "Schemes populated after " << passTimes << " passes through the Rules." << std::endl << std::endl;
+
 }
 
 Relation Interpreter::evalPredicate(Predicate* queries) {
